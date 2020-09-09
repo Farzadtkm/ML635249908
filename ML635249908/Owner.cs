@@ -388,6 +388,7 @@ namespace ML635249908
 
                 }
             }
+            //Updating the LEASE Tabel
             else if (OwnerComboBox.SelectedIndex == 2)
             {
                 try
@@ -415,7 +416,7 @@ namespace ML635249908
             }
         }
 
-        //Using view to show the datas to their text boxes. 
+        //Using view to show the datas to their text boxes.
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if(OwnerComboBox.SelectedIndex == 0)
