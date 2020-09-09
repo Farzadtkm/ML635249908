@@ -24,6 +24,13 @@ namespace ML635249908
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if(string.IsNullOrWhiteSpace(UserNameTextBox.Text) || string.IsNullOrWhiteSpace(PasswordTextBox.Text))
+            {
+                MessageBox.Show("Please fill all the textboxes");
+
+                return;
+            }
+
             SqlCommand cmd = new SqlCommand("SELECT * FROM Login WHERE UserName='"+UserNameTextBox.Text+"' AND Password ='"+PasswordTextBox.Text+"'", Connection);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
