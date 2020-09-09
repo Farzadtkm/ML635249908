@@ -342,5 +342,71 @@ namespace ML635249908
                 LeaseTerms.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
             }
         }
+
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            if (AssociateComboBox.SelectedIndex == 0)
+            {
+                connection.Open();
+                SqlCommand cmd = connection.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "SELECT * FROM Vehicles WHERE VehicleVIN='" + SearchTextBox.Text + "'";
+                cmd.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                sda.Fill(dt);
+                dataGridView1.DataSource = dt;
+                connection.Close();
+                VehicleVinTxt.Text = "";
+                ModelTxt.Text = "";
+                cartype.Text = "";
+                ColorComboBox.SelectedItem = "";
+                LeaseYearComboBox.SelectedItem = "";
+                KilometereOnOdometertxt.Text = "";
+                IsCarNewComboBox.SelectedItem = "";
+                BookValueTxt.Text = "";
+                TransmissionComboBox.SelectedItem = "";
+                OptionComboBox.SelectedItem = "";
+            }
+            else if (AssociateComboBox.SelectedIndex == 1)
+            {
+                connection.Open();
+                SqlCommand cmd = connection.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "SELECT First_LastName,PhoneNumber FROM Costumerss WHERE PhoneNumber='" + SearchTextBox.Text + "'";
+                cmd.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                sda.Fill(dt);
+                dataGridView1.DataSource = dt;
+                connection.Close();
+                AssociateNameTextBox.Text = "";
+                AssociateAddressTextBox.Text = "";
+                AssociateCityTextBox.Text = "";
+                AssociateProvinceTextBox.Text = "";
+                AssociatePostalCodeTextBox.Text = "";
+                AssociatePhoneNumberTextBox.Text = "";
+            }
+            else if (AssociateComboBox.SelectedIndex == 2)
+            {
+                connection.Open();
+                SqlCommand cmd = connection.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "SELECT * FROM Leases WHERE LeaseOwner='" + SearchTextBox.Text + "'";
+                cmd.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                sda.Fill(dt);
+                dataGridView1.DataSource = dt;
+                connection.Close();
+                BeginDate.Text = "";
+                FirstPaymentDate.Text = "";
+                AmountOfMonthly.Text = "";
+                NumberOfMonthly.Text = "";
+                WhichVehicleIsLeaseFor.Text = "";
+                LeaseOwner.Text = "";
+                LeaseTerms.Text = "";
+            }
+        }
     }
 }

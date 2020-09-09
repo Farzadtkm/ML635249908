@@ -95,7 +95,7 @@
             this.BeginDate = new System.Windows.Forms.DateTimePicker();
             this.FirstPaymentDate = new System.Windows.Forms.DateTimePicker();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
-            this.label32 = new System.Windows.Forms.Label();
+            this.SearchButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -737,23 +737,24 @@
             this.SearchTextBox.Size = new System.Drawing.Size(168, 20);
             this.SearchTextBox.TabIndex = 188;
             // 
-            // label32
+            // SearchButton
             // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(493, 9);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(72, 22);
-            this.label32.TabIndex = 187;
-            this.label32.Text = "Search ";
+            this.SearchButton.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchButton.Location = new System.Drawing.Point(745, 12);
+            this.SearchButton.Name = "SearchButton";
+            this.SearchButton.Size = new System.Drawing.Size(108, 23);
+            this.SearchButton.TabIndex = 191;
+            this.SearchButton.Text = "SEARCH";
+            this.SearchButton.UseVisualStyleBackColor = true;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // Associate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1221, 627);
+            this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.SearchTextBox);
-            this.Controls.Add(this.label32);
             this.Controls.Add(this.FirstPaymentDate);
             this.Controls.Add(this.BeginDate);
             this.Controls.Add(this.label31);
@@ -896,6 +897,6 @@
         private System.Windows.Forms.DateTimePicker BeginDate;
         private System.Windows.Forms.DateTimePicker FirstPaymentDate;
         private System.Windows.Forms.TextBox SearchTextBox;
-        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Button SearchButton;
     }
 }

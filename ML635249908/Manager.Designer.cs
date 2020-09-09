@@ -198,6 +198,7 @@
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(182, 20);
             this.NameTextBox.TabIndex = 17;
+            this.NameTextBox.TextChanged += new System.EventHandler(this.NameTextBox_TextChanged);
             // 
             // AddressTextBox
             // 
@@ -205,6 +206,7 @@
             this.AddressTextBox.Name = "AddressTextBox";
             this.AddressTextBox.Size = new System.Drawing.Size(182, 20);
             this.AddressTextBox.TabIndex = 18;
+            this.AddressTextBox.TextChanged += new System.EventHandler(this.AddressTextBox_TextChanged);
             // 
             // ProvinceTextBox
             // 
@@ -220,6 +222,7 @@
             this.CityTextBox.Name = "CityTextBox";
             this.CityTextBox.Size = new System.Drawing.Size(182, 20);
             this.CityTextBox.TabIndex = 20;
+            this.CityTextBox.TextChanged += new System.EventHandler(this.CityTextBox_TextChanged);
             // 
             // PostalCodeTextBox
             // 

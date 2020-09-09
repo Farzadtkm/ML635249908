@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace ML635249908
 {
@@ -174,32 +175,33 @@ namespace ML635249908
             } 
         }
 
-        //Provine text box only get to characters for input.
+        //Provine text box only get to characters for input and make the string Upper case.
         private void ProvinceTextBox_TextChanged(object sender, EventArgs e)
         {
             ProvinceTextBox.MaxLength = 2;
+            string ProvinceUppercase = ProvinceTextBox.Text;
+            ProvinceUppercase.ToUpper();
         }
 
         //Phone number text box just get Numbers to save for Data.
         private void PhoneNumberTextBox_TextChanged(object sender, EventArgs e)
         {
-           // if (System.Text.RegularExpressions.Regex.IsMatch(PhoneNumberTextBox.Text, "[^0-9]"))
-           // {
-           //     MessageBox.Show("Don't put any character! Only numbers.");
-
-          //      string s = PhoneNumberTextBox.Text;
-
-           //     if (s.Length > 1)
-          //      {
-           //         s = s.Substring(0, s.Length - 1);
-           //     }
-            //    else
-           //    {
-             //       s = "";
-           //     }
-
-             //   PhoneNumberTextBox.Text = s;
-          //  }
+            if (Regex.IsMatch(PhoneNumberTextBox.Text, "^[0-9 ()-]*$"))
+            {
+                String Temp = PhoneNumberTextBox.Text;
+                if (Temp.Length > 1)
+                {
+                    Temp = Temp.Substring(0, Temp.Length - 1);
+                }
+                else
+                {
+                    Temp = "";
+                }
+            }
+            else
+            {
+                MessageBox.Show("Enter ONLY Numbers Please");
+            }
         }
 
         //Giving different level of accesses to our users from here. Some of the buttons will be disabled for them.
@@ -320,5 +322,65 @@ namespace ML635249908
                 LeaseTerms.Text = "";
             }
         }
+
+        private void NameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (Regex.IsMatch(NameTextBox.Text, "^[a-zA-Z ]*$"))
+            {
+                String Temp = NameTextBox.Text;
+                if (Temp.Length > 1)
+                {
+                    Temp = Temp.Substring(0, Temp.Length - 1);
+                }
+                else
+                {
+                    Temp = "";
+                }
+            }
+            else
+            {
+                MessageBox.Show("Enter ONLY characters Please");
+            }
+        }
+
+        private void AddressTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (Regex.IsMatch(AddressTextBox.Text, "^[a-zA-Z0-9 ]*$"))
+            {
+                String Temp = AddressTextBox.Text;
+                if (Temp.Length > 1)
+                {
+                    Temp = Temp.Substring(0, Temp.Length - 1);
+                }
+                else
+                {
+                    Temp = "";
+                }
+            }
+            else
+            {
+                MessageBox.Show("Enter ONLY characters Please");
+            }
+        }
+
+        private void CityTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (Regex.IsMatch(CityTextBox.Text, "^[a-zA-Z ]*$"))
+            {
+                String Temp = CityTextBox.Text;
+                if (Temp.Length > 1)
+                {
+                    Temp = Temp.Substring(0, Temp.Length - 1);
+                }
+                else
+                {
+                    Temp = "";
+                }
+            }
+            else
+            {
+                MessageBox.Show("Enter ONLY characters Please");
+            }
+        }
     }
-}
+    }
