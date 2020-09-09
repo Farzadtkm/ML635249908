@@ -266,5 +266,59 @@ namespace ML635249908
                 AmountTextBox.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
             }
         }
+
+        private void SearchTextBox_TextChanged(object sender, EventArgs e)
+        {
+          
+        }
+
+        /// <summary>
+        /// Search Button to search in Customer and Lease table and find their full name by their Phone Number
+        /// and all their data in Lease table.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            if (ManagerComboBox.SelectedIndex == 0)
+            {
+                connection.Open();
+                SqlCommand cmd = connection.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "SELECT First_LastName,PhoneNumber FROM Costumerss WHERE PhoneNumber='" + SearchTextBox.Text + "'";
+                cmd.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                sda.Fill(dt);
+                dataGridView1.DataSource = dt;
+                connection.Close();
+                NameTextBox.Text = "";
+                AddressTextBox.Text = "";
+                CityTextBox.Text = "";
+                ProvinceTextBox.Text = "";
+                PostalCodeTextBox.Text = "";
+                PhoneNumberTextBox.Text = "";
+            }
+            else if(ManagerComboBox.SelectedIndex == 1)
+            {
+                connection.Open();
+                SqlCommand cmd = connection.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "SELECT * FROM Leases WHERE LeaseOwner='" + SearchTextBox.Text + "'";
+                cmd.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                sda.Fill(dt);
+                dataGridView1.DataSource = dt;
+                connection.Close();
+                LeaseDate.Text = "";
+                FirstPaymentDate.Text = "";
+                AmountOfMonthlyPayment.Text = "";
+                NumberOfMonthlyPayments.Text = "";
+                WhichVehicleLeaseFor.Text = "";
+                LeaseOwner.Text = "";
+                LeaseTerms.Text = "";
+            }
+        }
     }
 }

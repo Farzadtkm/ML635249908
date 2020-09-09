@@ -34,8 +34,6 @@
             this.ManagerComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.SearchComboBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -71,6 +69,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.LeaseDate = new System.Windows.Forms.DateTimePicker();
             this.FirstPaymentDate = new System.Windows.Forms.DateTimePicker();
+            this.SearchTextBox = new System.Windows.Forms.TextBox();
+            this.SearchButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -141,23 +141,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(819, 354);
             this.dataGridView1.TabIndex = 6;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(893, 567);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 19);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Search";
-            // 
-            // SearchComboBox
-            // 
-            this.SearchComboBox.Location = new System.Drawing.Point(970, 568);
-            this.SearchComboBox.Name = "SearchComboBox";
-            this.SearchComboBox.Size = new System.Drawing.Size(181, 20);
-            this.SearchComboBox.TabIndex = 9;
             // 
             // label3
             // 
@@ -472,11 +455,32 @@
             this.FirstPaymentDate.Size = new System.Drawing.Size(126, 20);
             this.FirstPaymentDate.TabIndex = 187;
             // 
+            // SearchTextBox
+            // 
+            this.SearchTextBox.Location = new System.Drawing.Point(564, 10);
+            this.SearchTextBox.Name = "SearchTextBox";
+            this.SearchTextBox.Size = new System.Drawing.Size(168, 20);
+            this.SearchTextBox.TabIndex = 189;
+            this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
+            // 
+            // SearchButton
+            // 
+            this.SearchButton.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchButton.Location = new System.Drawing.Point(743, 4);
+            this.SearchButton.Name = "SearchButton";
+            this.SearchButton.Size = new System.Drawing.Size(108, 29);
+            this.SearchButton.TabIndex = 190;
+            this.SearchButton.Text = "SEARCH";
+            this.SearchButton.UseVisualStyleBackColor = true;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
+            // 
             // Manager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1215, 623);
+            this.Controls.Add(this.SearchButton);
+            this.Controls.Add(this.SearchTextBox);
             this.Controls.Add(this.FirstPaymentDate);
             this.Controls.Add(this.LeaseDate);
             this.Controls.Add(this.button1);
@@ -512,8 +516,6 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.SearchComboBox);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ManagerComboBox);
@@ -536,8 +538,6 @@
         private System.Windows.Forms.ComboBox ManagerComboBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox SearchComboBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -573,5 +573,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DateTimePicker LeaseDate;
         private System.Windows.Forms.DateTimePicker FirstPaymentDate;
+        private System.Windows.Forms.TextBox SearchTextBox;
+        private System.Windows.Forms.Button SearchButton;
     }
 }
