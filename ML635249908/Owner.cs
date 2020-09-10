@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace ML635249908
 {
@@ -521,6 +522,66 @@ namespace ML635249908
                 WhichVehicleIsLeaseFor.Text = "";
                 LeaseOwner.Text = "";
                 LeaseTerm.Text = "";
+            }
+        }
+
+        private void NameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (Regex.IsMatch(NameTextBox.Text, "^[a-zA-Z0-9 ]*$"))
+            {
+                String Temp = NameTextBox.Text;
+                if (Temp.Length > 1)
+                {
+                    Temp = Temp.Substring(0, Temp.Length - 1);
+                }
+                else
+                {
+                    Temp = "";
+                }
+            }
+            else
+            {
+                MessageBox.Show("Enter ONLY characters Please");
+            }
+        }
+
+        private void AddressTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (Regex.IsMatch(AddressTextBox.Text, "^[a-zA-Z0-9 ]*$"))
+            {
+                String Temp = AddressTextBox.Text;
+                if (Temp.Length > 1)
+                {
+                    Temp = Temp.Substring(0, Temp.Length - 1);
+                }
+                else
+                {
+                    Temp = "";
+                }
+            }
+            else
+            {
+                MessageBox.Show("Enter ONLY characters Please");
+            }
+        }
+
+        private void CityTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (Regex.IsMatch(CityTextBox.Text, "^[a-zA-Z ]*$"))
+            {
+                String Temp = CityTextBox.Text;
+                if (Temp.Length > 1)
+                {
+                    Temp = Temp.Substring(0, Temp.Length - 1);
+                }
+                else
+                {
+                    Temp = "";
+                }
+            }
+            else
+            {
+                MessageBox.Show("Enter ONLY characters Please");
             }
         }
     }
