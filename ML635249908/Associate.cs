@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace ML635249908
 {
@@ -170,7 +171,7 @@ namespace ML635249908
                 connection.Open();
                 SqlCommand cmd = connection.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "INSERT INTO [Leases] (DateTheLeaseContractBegin, FirstPaymentDate, AmountOfMonthlyPayment, NumberOfMonthlyPayments, WhichVehicleTheLeaseIsFor, LeaseOwner, TheTermsOfTheLease) VALUES ('" + BeginDate.Text.ToString() + "','" + FirstPaymentDate.Text.ToString() + "', '" + AmountOfMonthly.Text + "','" + NumberOfMonthly.Text + "', '" + WhichVehicleIsLeaseFor.Text + "','" + LeaseOwner.Text + "','"+LeaseTerms.Text+"')";
+                cmd.CommandText = "INSERT INTO [Leases] (DateTheLeaseContractBegin, FirstPaymentDate, AmountOfMonthlyPayment, NumberOfMonthlyPayments, WhichVehicleTheLeaseIsFor, LeaseOwner, TheTermsOfTheLease, NumberOfYeasrs, MaximumKilometres, ChargeForExtraMileage) VALUES ('" + BeginDate.Text.ToString() + "','" + FirstPaymentDate.Text.ToString() + "', '" + AmountOfMonthly.Text + "','" + NumberOfMonthly.Text + "', '" + WhichVehicleIsLeaseFor.Text + "','" + LeaseOwner.Text + "','"+LeaseTerms.Text+"','"+NumberOfYears.Text+"','"+MaximumKilometere.Text+"','"+ChargeOfExtraMileage.Text+"',)";
                 cmd.ExecuteNonQuery();
                 connection.Close();
                 BeginDate.Text = "";
@@ -180,6 +181,9 @@ namespace ML635249908
                 WhichVehicleIsLeaseFor.Text = "";
                 LeaseOwner.Text = "";
                 LeaseTerms.Text = "";
+                NumberOfYears.Text = "";
+                MaximumKilometere.Text = "";
+                ChargeOfExtraMileage.Text = "";
                 displayLeasesData();
                 MessageBox.Show("The Data Inserted Successfully");
             }
@@ -300,7 +304,7 @@ namespace ML635249908
                     connection.Open();
                     SqlCommand cmd = connection.CreateCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "UPDATE Leases set DateTheLeaseContractBegin='" + BeginDate.Text + "',FirstPaymentDate='" + FirstPaymentDate.Text + "',AmountOfMonthlyPayment ='" + AmountOfMonthly.Text + "',NumberOfMonthlyPayments='" + NumberOfMonthly    .Text + "',WhichVehicleTheLeaseIsFor='" + WhichVehicleIsLeaseFor.Text + "',LeaseOwner='" + LeaseOwner.Text + "', TheTermsOfTheLease=  '" + LeaseTerms.Text + " 'WHERE AmountOfMonthlyPayment='" + AmountOfMonthly.Text + "'";
+                    cmd.CommandText = "UPDATE Leases set DateTheLeaseContractBegin='" + BeginDate.Text + "',FirstPaymentDate='" + FirstPaymentDate.Text + "',AmountOfMonthlyPayment ='" + AmountOfMonthly.Text + "',NumberOfMonthlyPayments='" + NumberOfMonthly    .Text + "',WhichVehicleTheLeaseIsFor='" + WhichVehicleIsLeaseFor.Text + "',LeaseOwner='" + LeaseOwner.Text + "', TheTermsOfTheLease=  '" + LeaseTerms.Text + "', NumberOfYeasrs= '" + NumberOfYears.Text+ "',MaximumKilometres='"+MaximumKilometere.Text+ "', ChargeForExtraMileage='"+ChargeOfExtraMileage.Text+"' WHERE AmountOfMonthlyPayment='" + AmountOfMonthly.Text + "'";
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("The Data Updated Successfully");
                     connection.Close();
@@ -311,6 +315,9 @@ namespace ML635249908
                     WhichVehicleIsLeaseFor.Text = "";
                     LeaseOwner.Text = "";
                     LeaseTerms.Text = "";
+                    NumberOfYears.Text = "";
+                    MaximumKilometere.Text = "";
+                    ChargeOfExtraMileage.Text = "";
                     displayLeasesData();
                 }
                 catch (Exception)
@@ -340,6 +347,16 @@ namespace ML635249908
                 WhichVehicleIsLeaseFor.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
                 LeaseOwner.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
                 LeaseTerms.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
+                NumberOfYears.Text = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
+                MaximumKilometere.Text = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString();
+                ChargeOfExtraMileage.Text = dataGridView1.Rows[e.RowIndex].Cells[9].Value.ToString();
+            }
+            else if(AssociateComboBox.SelectedIndex == 3)
+            {
+                LeaseIDTextBox.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+                DateTextBox.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+                AmountTextBox.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+                ReasonTextBox.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
             }
         }
 
@@ -406,6 +423,9 @@ namespace ML635249908
                 WhichVehicleIsLeaseFor.Text = "";
                 LeaseOwner.Text = "";
                 LeaseTerms.Text = "";
+                NumberOfYears.Text = "";
+                MaximumKilometere.Text = "";
+                ChargeOfExtraMileage.Text = "";
             }
         }
     }

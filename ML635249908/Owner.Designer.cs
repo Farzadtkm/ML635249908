@@ -48,7 +48,6 @@
             this.EditButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.AmountTextBox = new System.Windows.Forms.TextBox();
-            this.DateTextBox = new System.Windows.Forms.TextBox();
             this.LeaseIDTextBox = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
@@ -97,6 +96,15 @@
             this.FirstPaymentDate = new System.Windows.Forms.DateTimePicker();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.SearchButton = new System.Windows.Forms.Button();
+            this.ChargeOfExtraMileage = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.MaximumKilometere = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.NumberOfYears = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.ReasonTextBox = new System.Windows.Forms.TextBox();
+            this.DateTextBox = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -226,7 +234,7 @@
             // 
             this.ViewButton.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ViewButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ViewButton.Location = new System.Drawing.Point(33, 477);
+            this.ViewButton.Location = new System.Drawing.Point(27, 531);
             this.ViewButton.Name = "ViewButton";
             this.ViewButton.Size = new System.Drawing.Size(128, 29);
             this.ViewButton.TabIndex = 172;
@@ -238,7 +246,7 @@
             // 
             this.DeleteButton.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.DeleteButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteButton.Location = new System.Drawing.Point(33, 512);
+            this.DeleteButton.Location = new System.Drawing.Point(27, 566);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(128, 29);
             this.DeleteButton.TabIndex = 171;
@@ -250,7 +258,7 @@
             // 
             this.VoidButton.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.VoidButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VoidButton.Location = new System.Drawing.Point(185, 477);
+            this.VoidButton.Location = new System.Drawing.Point(179, 531);
             this.VoidButton.Name = "VoidButton";
             this.VoidButton.Size = new System.Drawing.Size(128, 29);
             this.VoidButton.TabIndex = 170;
@@ -261,7 +269,7 @@
             // 
             this.TerminateButton.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.TerminateButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TerminateButton.Location = new System.Drawing.Point(185, 512);
+            this.TerminateButton.Location = new System.Drawing.Point(179, 566);
             this.TerminateButton.Name = "TerminateButton";
             this.TerminateButton.Size = new System.Drawing.Size(128, 29);
             this.TerminateButton.TabIndex = 169;
@@ -272,7 +280,7 @@
             // 
             this.InsertButton.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.InsertButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InsertButton.Location = new System.Drawing.Point(33, 442);
+            this.InsertButton.Location = new System.Drawing.Point(27, 496);
             this.InsertButton.Name = "InsertButton";
             this.InsertButton.Size = new System.Drawing.Size(128, 29);
             this.InsertButton.TabIndex = 168;
@@ -284,7 +292,7 @@
             // 
             this.EditButton.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.EditButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditButton.Location = new System.Drawing.Point(185, 442);
+            this.EditButton.Location = new System.Drawing.Point(179, 496);
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(128, 29);
             this.EditButton.TabIndex = 167;
@@ -297,7 +305,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(336, 331);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(862, 280);
+            this.dataGridView1.Size = new System.Drawing.Size(1066, 280);
             this.dataGridView1.TabIndex = 166;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -307,13 +315,7 @@
             this.AmountTextBox.Name = "AmountTextBox";
             this.AmountTextBox.Size = new System.Drawing.Size(158, 20);
             this.AmountTextBox.TabIndex = 165;
-            // 
-            // DateTextBox
-            // 
-            this.DateTextBox.Location = new System.Drawing.Point(109, 379);
-            this.DateTextBox.Name = "DateTextBox";
-            this.DateTextBox.Size = new System.Drawing.Size(158, 20);
-            this.DateTextBox.TabIndex = 164;
+            this.AmountTextBox.Leave += new System.EventHandler(this.AmountTextBox_Leave);
             // 
             // LeaseIDTextBox
             // 
@@ -366,7 +368,7 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(16, 302);
+            this.label23.Location = new System.Drawing.Point(11, 305);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(119, 19);
             this.label23.TabIndex = 158;
@@ -395,6 +397,7 @@
             this.KilometereOnOdometertxt.Name = "KilometereOnOdometertxt";
             this.KilometereOnOdometertxt.Size = new System.Drawing.Size(108, 20);
             this.KilometereOnOdometertxt.TabIndex = 155;
+            this.KilometereOnOdometertxt.TextChanged += new System.EventHandler(this.KilometereOnOdometertxt_TextChanged);
             // 
             // label2
             // 
@@ -482,9 +485,9 @@
             // 
             // LeaseOwner
             // 
-            this.LeaseOwner.Location = new System.Drawing.Point(1040, 162);
+            this.LeaseOwner.Location = new System.Drawing.Point(1165, 141);
             this.LeaseOwner.Name = "LeaseOwner";
-            this.LeaseOwner.Size = new System.Drawing.Size(145, 20);
+            this.LeaseOwner.Size = new System.Drawing.Size(97, 20);
             this.LeaseOwner.TabIndex = 145;
             // 
             // WhichVehicleIsLeaseFor
@@ -516,7 +519,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(1057, 140);
+            this.label15.Location = new System.Drawing.Point(1040, 140);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(98, 19);
             this.label15.TabIndex = 141;
@@ -721,7 +724,7 @@
             this.BeginDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.BeginDate.Location = new System.Drawing.Point(236, 140);
             this.BeginDate.Name = "BeginDate";
-            this.BeginDate.Size = new System.Drawing.Size(122, 20);
+            this.BeginDate.Size = new System.Drawing.Size(130, 20);
             this.BeginDate.TabIndex = 183;
             // 
             // FirstPaymentDate
@@ -730,7 +733,7 @@
             this.FirstPaymentDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.FirstPaymentDate.Location = new System.Drawing.Point(236, 178);
             this.FirstPaymentDate.Name = "FirstPaymentDate";
-            this.FirstPaymentDate.Size = new System.Drawing.Size(122, 20);
+            this.FirstPaymentDate.Size = new System.Drawing.Size(130, 20);
             this.FirstPaymentDate.TabIndex = 184;
             // 
             // SearchTextBox
@@ -751,11 +754,97 @@
             this.SearchButton.UseVisualStyleBackColor = true;
             this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
+            // ChargeOfExtraMileage
+            // 
+            this.ChargeOfExtraMileage.Location = new System.Drawing.Point(1229, 211);
+            this.ChargeOfExtraMileage.Name = "ChargeOfExtraMileage";
+            this.ChargeOfExtraMileage.Size = new System.Drawing.Size(59, 20);
+            this.ChargeOfExtraMileage.TabIndex = 203;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.Location = new System.Drawing.Point(1040, 212);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(183, 19);
+            this.label34.TabIndex = 202;
+            this.label34.Text = "Charge OF Extra Mileage";
+            // 
+            // MaximumKilometere
+            // 
+            this.MaximumKilometere.Location = new System.Drawing.Point(1298, 158);
+            this.MaximumKilometere.Name = "MaximumKilometere";
+            this.MaximumKilometere.Size = new System.Drawing.Size(104, 20);
+            this.MaximumKilometere.TabIndex = 201;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Location = new System.Drawing.Point(1268, 136);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(148, 19);
+            this.label33.TabIndex = 200;
+            this.label33.Text = "Maximum Kilometer";
+            // 
+            // NumberOfYears
+            // 
+            this.NumberOfYears.Location = new System.Drawing.Point(1165, 178);
+            this.NumberOfYears.Name = "NumberOfYears";
+            this.NumberOfYears.Size = new System.Drawing.Size(59, 20);
+            this.NumberOfYears.TabIndex = 199;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(1040, 178);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(124, 19);
+            this.label32.TabIndex = 198;
+            this.label32.Text = "Number Of Years";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.Location = new System.Drawing.Point(15, 433);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(60, 19);
+            this.label35.TabIndex = 204;
+            this.label35.Text = "Reason";
+            // 
+            // ReasonTextBox
+            // 
+            this.ReasonTextBox.Location = new System.Drawing.Point(109, 434);
+            this.ReasonTextBox.Name = "ReasonTextBox";
+            this.ReasonTextBox.Size = new System.Drawing.Size(158, 20);
+            this.ReasonTextBox.TabIndex = 205;
+            // 
+            // DateTextBox
+            // 
+            this.DateTextBox.CustomFormat = "MMMM dd, yyyy";
+            this.DateTextBox.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DateTextBox.Location = new System.Drawing.Point(109, 379);
+            this.DateTextBox.Name = "DateTextBox";
+            this.DateTextBox.Size = new System.Drawing.Size(158, 20);
+            this.DateTextBox.TabIndex = 206;
+            // 
             // Owner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1203, 615);
+            this.ClientSize = new System.Drawing.Size(1414, 615);
+            this.Controls.Add(this.DateTextBox);
+            this.Controls.Add(this.ReasonTextBox);
+            this.Controls.Add(this.label35);
+            this.Controls.Add(this.ChargeOfExtraMileage);
+            this.Controls.Add(this.label34);
+            this.Controls.Add(this.MaximumKilometere);
+            this.Controls.Add(this.label33);
+            this.Controls.Add(this.NumberOfYears);
+            this.Controls.Add(this.label32);
             this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.SearchTextBox);
             this.Controls.Add(this.FirstPaymentDate);
@@ -778,7 +867,6 @@
             this.Controls.Add(this.EditButton);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.AmountTextBox);
-            this.Controls.Add(this.DateTextBox);
             this.Controls.Add(this.LeaseIDTextBox);
             this.Controls.Add(this.label26);
             this.Controls.Add(this.label27);
@@ -852,7 +940,6 @@
         private System.Windows.Forms.Button EditButton;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox AmountTextBox;
-        private System.Windows.Forms.TextBox DateTextBox;
         private System.Windows.Forms.TextBox LeaseIDTextBox;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label27;
@@ -901,5 +988,14 @@
         private System.Windows.Forms.DateTimePicker FirstPaymentDate;
         private System.Windows.Forms.TextBox SearchTextBox;
         private System.Windows.Forms.Button SearchButton;
+        private System.Windows.Forms.TextBox ChargeOfExtraMileage;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.TextBox MaximumKilometere;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.TextBox NumberOfYears;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.TextBox ReasonTextBox;
+        private System.Windows.Forms.DateTimePicker DateTextBox;
     }
 }
