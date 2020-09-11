@@ -149,7 +149,7 @@ namespace ML635249908
                 connection.Open();
                 SqlCommand cmd = connection.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "INSERT INTO [Vehicles] (VehicleVIN, Model, CarType, Color, LeaseYear, KilometersOnOdometers, IsCarNew, BookValue, TransmissionID, Options) VALUES ('" + VehicleVinTxt.Text+ "','" + ModelTxt.Text + "', '" + cartype.SelectedItem.ToString() + "','" + ColorComboBox.SelectedItem.ToString() + "', '" +LeaseYearComboBox.SelectedItem.ToString() + "','" + KilometereOnOdometertxt.Text + "','"+IsCarNewComboBox.SelectedItem.ToString()+"','"+BookValueTxt.Text+"','"+TransmissionComboBox.SelectedItem.ToString()+"','"+OptionComboBox.SelectedItem.ToString()+"')";
+                cmd.CommandText = "INSERT INTO [Vehicles] (VehicleVIN, Model, CarType, Color, LeaseYear, KilometersOnOdometers, IsCarNew, BookValue, TransmissionID, Options) VALUES ('" + VehicleVinTxt.Text+ "','" + ModelTxt.Text + "', '" + cartype.SelectedItem + "','" + ColorComboBox.SelectedItem + "', '" +LeaseYearComboBox.SelectedItem + "','" + KilometereOnOdometertxt.Text + "','"+IsCarNewComboBox.SelectedItem.ToString()+"','"+BookValueTxt.Text+"','"+TransmissionComboBox.SelectedItem+"','"+OptionComboBox.SelectedItem+"')";
                 cmd.ExecuteNonQuery();
                 connection.Close();
                 VehicleVinTxt.Text = "";
@@ -171,7 +171,7 @@ namespace ML635249908
                 connection.Open();
                 SqlCommand cmd = connection.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "INSERT INTO [Leases] (DateTheLeaseContractBegin, FirstPaymentDate, AmountOfMonthlyPayment, NumberOfMonthlyPayments, WhichVehicleTheLeaseIsFor, LeaseOwner, TheTermsOfTheLease, NumberOfYeasrs, MaximumKilometres, ChargeForExtraMileage) VALUES ('" + BeginDate.Text.ToString() + "','" + FirstPaymentDate.Text.ToString() + "', '" + AmountOfMonthly.Text + "','" + NumberOfMonthly.Text + "', '" + WhichVehicleIsLeaseFor.Text + "','" + LeaseOwner.Text + "','"+LeaseTerms.Text+"','"+NumberOfYears.Text+"','"+MaximumKilometere.Text+"','"+ChargeOfExtraMileage.Text+"',)";
+                cmd.CommandText = "INSERT INTO [Leases] (DateTheLeaseContractBegin, FirstPaymentDate, AmountOfMonthlyPayment, NumberOfMonthlyPayments, WhichVehicleTheLeaseIsFor, LeaseOwner, TheTermsOfTheLease, NumberOfYeasrs, MaximumKilometres, ChargeForExtraMileage) VALUES ('" + BeginDate.Text.ToString() + "','" + FirstPaymentDate.Text.ToString() + "', '" + AmountOfMonthly.Text + "','" + NumberOfMonthly.Text + "', '" + WhichVehicleIsLeaseFor.Text + "','" + LeaseOwner.Text + "','"+LeaseTerms.Text+"','"+NumberOfYears.Text+"','"+MaximumKilometere.Text+"','"+ChargeOfExtraMileage.Text+"')";
                 cmd.ExecuteNonQuery();
                 connection.Close();
                 BeginDate.Text = "";

@@ -79,7 +79,14 @@
             this.ReasonTextBox = new System.Windows.Forms.TextBox();
             this.label35 = new System.Windows.Forms.Label();
             this.DateTextBox = new System.Windows.Forms.DateTimePicker();
+            this.GroupBox = new System.Windows.Forms.GroupBox();
+            this.ShowButton = new System.Windows.Forms.Button();
+            this.KilometereOnOdometertxt = new System.Windows.Forms.TextBox();
+            this.VehicleVinTxt = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.GroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // EditButton
@@ -283,7 +290,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(362, 168);
+            this.label12.Location = new System.Drawing.Point(370, 167);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(205, 19);
             this.label12.TabIndex = 27;
@@ -293,7 +300,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(362, 205);
+            this.label13.Location = new System.Drawing.Point(370, 205);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(214, 19);
             this.label13.TabIndex = 30;
@@ -303,7 +310,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(628, 164);
+            this.label14.Location = new System.Drawing.Point(637, 168);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(223, 19);
             this.label14.TabIndex = 31;
@@ -311,14 +318,14 @@
             // 
             // AmountOfMonthlyPayment
             // 
-            this.AmountOfMonthlyPayment.Location = new System.Drawing.Point(573, 167);
+            this.AmountOfMonthlyPayment.Location = new System.Drawing.Point(582, 167);
             this.AmountOfMonthlyPayment.Name = "AmountOfMonthlyPayment";
             this.AmountOfMonthlyPayment.Size = new System.Drawing.Size(58, 20);
             this.AmountOfMonthlyPayment.TabIndex = 32;
             // 
             // NumberOfMonthlyPayments
             // 
-            this.NumberOfMonthlyPayments.Location = new System.Drawing.Point(573, 208);
+            this.NumberOfMonthlyPayments.Location = new System.Drawing.Point(582, 208);
             this.NumberOfMonthlyPayments.Name = "NumberOfMonthlyPayments";
             this.NumberOfMonthlyPayments.Size = new System.Drawing.Size(58, 20);
             this.NumberOfMonthlyPayments.TabIndex = 33;
@@ -337,7 +344,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(628, 207);
+            this.label16.Location = new System.Drawing.Point(647, 208);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(177, 19);
             this.label16.TabIndex = 35;
@@ -345,14 +352,14 @@
             // 
             // LeaseTerms
             // 
-            this.LeaseTerms.Location = new System.Drawing.Point(855, 204);
+            this.LeaseTerms.Location = new System.Drawing.Point(857, 204);
             this.LeaseTerms.Name = "LeaseTerms";
             this.LeaseTerms.Size = new System.Drawing.Size(162, 20);
             this.LeaseTerms.TabIndex = 36;
             // 
             // WhichVehicleLeaseFor
             // 
-            this.WhichVehicleLeaseFor.Location = new System.Drawing.Point(855, 165);
+            this.WhichVehicleLeaseFor.Location = new System.Drawing.Point(857, 169);
             this.WhichVehicleLeaseFor.Name = "WhichVehicleLeaseFor";
             this.WhichVehicleLeaseFor.Size = new System.Drawing.Size(162, 20);
             this.WhichVehicleLeaseFor.TabIndex = 37;
@@ -483,33 +490,33 @@
             // 
             // ChargeOfExtraMileage
             // 
-            this.ChargeOfExtraMileage.Location = new System.Drawing.Point(1320, 279);
+            this.ChargeOfExtraMileage.Location = new System.Drawing.Point(1254, 279);
             this.ChargeOfExtraMileage.Name = "ChargeOfExtraMileage";
-            this.ChargeOfExtraMileage.Size = new System.Drawing.Size(59, 20);
+            this.ChargeOfExtraMileage.Size = new System.Drawing.Size(139, 20);
             this.ChargeOfExtraMileage.TabIndex = 203;
             // 
             // label34
             // 
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(1131, 278);
+            this.label34.Location = new System.Drawing.Point(1104, 278);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(183, 19);
+            this.label34.Size = new System.Drawing.Size(105, 19);
             this.label34.TabIndex = 202;
-            this.label34.Text = "Charge OF Extra Mileage";
+            this.label34.Text = "Perimum Rate";
             // 
             // MaximumKilometere
             // 
-            this.MaximumKilometere.Location = new System.Drawing.Point(1320, 243);
+            this.MaximumKilometere.Location = new System.Drawing.Point(1254, 243);
             this.MaximumKilometere.Name = "MaximumKilometere";
-            this.MaximumKilometere.Size = new System.Drawing.Size(104, 20);
+            this.MaximumKilometere.Size = new System.Drawing.Size(139, 20);
             this.MaximumKilometere.TabIndex = 201;
             // 
             // label33
             // 
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(1131, 243);
+            this.label33.Location = new System.Drawing.Point(1100, 242);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(148, 19);
             this.label33.TabIndex = 200;
@@ -558,11 +565,73 @@
             this.DateTextBox.Size = new System.Drawing.Size(158, 20);
             this.DateTextBox.TabIndex = 208;
             // 
+            // GroupBox
+            // 
+            this.GroupBox.Controls.Add(this.ShowButton);
+            this.GroupBox.Controls.Add(this.KilometereOnOdometertxt);
+            this.GroupBox.Controls.Add(this.VehicleVinTxt);
+            this.GroupBox.Controls.Add(this.label2);
+            this.GroupBox.Controls.Add(this.label9);
+            this.GroupBox.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GroupBox.Location = new System.Drawing.Point(1063, 30);
+            this.GroupBox.Name = "GroupBox";
+            this.GroupBox.Size = new System.Drawing.Size(338, 117);
+            this.GroupBox.TabIndex = 209;
+            this.GroupBox.TabStop = false;
+            this.GroupBox.Text = "VEHICLE Data To TERMINATE the Leases";
+            // 
+            // ShowButton
+            // 
+            this.ShowButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ShowButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ShowButton.Location = new System.Drawing.Point(128, 80);
+            this.ShowButton.Name = "ShowButton";
+            this.ShowButton.Size = new System.Drawing.Size(88, 29);
+            this.ShowButton.TabIndex = 210;
+            this.ShowButton.Text = "Show";
+            this.ShowButton.UseVisualStyleBackColor = false;
+            this.ShowButton.Click += new System.EventHandler(this.ShowButton_Click);
+            // 
+            // KilometereOnOdometertxt
+            // 
+            this.KilometereOnOdometertxt.Location = new System.Drawing.Point(191, 57);
+            this.KilometereOnOdometertxt.Name = "KilometereOnOdometertxt";
+            this.KilometereOnOdometertxt.Size = new System.Drawing.Size(141, 20);
+            this.KilometereOnOdometertxt.TabIndex = 199;
+            // 
+            // VehicleVinTxt
+            // 
+            this.VehicleVinTxt.Location = new System.Drawing.Point(112, 28);
+            this.VehicleVinTxt.Name = "VehicleVinTxt";
+            this.VehicleVinTxt.Size = new System.Drawing.Size(220, 20);
+            this.VehicleVinTxt.TabIndex = 198;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(6, 58);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(179, 19);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Kilometer On Odometere";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(6, 29);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(84, 19);
+            this.label9.TabIndex = 16;
+            this.label9.Text = "Vehicle Vin";
+            // 
             // Manager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1428, 623);
+            this.Controls.Add(this.GroupBox);
             this.Controls.Add(this.DateTextBox);
             this.Controls.Add(this.ReasonTextBox);
             this.Controls.Add(this.label35);
@@ -618,6 +687,8 @@
             this.Text = "Manager";
             this.Load += new System.EventHandler(this.Manager_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.GroupBox.ResumeLayout(false);
+            this.GroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -675,5 +746,11 @@
         private System.Windows.Forms.TextBox ReasonTextBox;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.DateTimePicker DateTextBox;
+        private System.Windows.Forms.GroupBox GroupBox;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox VehicleVinTxt;
+        private System.Windows.Forms.TextBox KilometereOnOdometertxt;
+        private System.Windows.Forms.Button ShowButton;
     }
 }

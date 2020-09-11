@@ -223,8 +223,9 @@
             // 
             this.OptionComboBox.FormattingEnabled = true;
             this.OptionComboBox.Items.AddRange(new object[] {
-            "Air Condition",
-            "Power Locks"});
+            "Air Condition & Power Locks",
+            "Power Locks",
+            "Air Condition"});
             this.OptionComboBox.Location = new System.Drawing.Point(396, 302);
             this.OptionComboBox.Name = "OptionComboBox";
             this.OptionComboBox.Size = new System.Drawing.Size(108, 21);
@@ -573,7 +574,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(16, 179);
+            this.label11.Location = new System.Drawing.Point(4, 179);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(139, 19);
             this.label11.TabIndex = 133;
@@ -583,7 +584,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(12, 140);
+            this.label10.Location = new System.Drawing.Point(4, 140);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(222, 19);
             this.label10.TabIndex = 132;
@@ -722,18 +723,18 @@
             // 
             this.BeginDate.CustomFormat = "MMMM dd, yyyy";
             this.BeginDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.BeginDate.Location = new System.Drawing.Point(236, 140);
+            this.BeginDate.Location = new System.Drawing.Point(228, 140);
             this.BeginDate.Name = "BeginDate";
-            this.BeginDate.Size = new System.Drawing.Size(130, 20);
+            this.BeginDate.Size = new System.Drawing.Size(138, 20);
             this.BeginDate.TabIndex = 183;
             // 
             // FirstPaymentDate
             // 
             this.FirstPaymentDate.CustomFormat = "MMMM dd, yyyy";
             this.FirstPaymentDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FirstPaymentDate.Location = new System.Drawing.Point(236, 178);
+            this.FirstPaymentDate.Location = new System.Drawing.Point(228, 178);
             this.FirstPaymentDate.Name = "FirstPaymentDate";
-            this.FirstPaymentDate.Size = new System.Drawing.Size(130, 20);
+            this.FirstPaymentDate.Size = new System.Drawing.Size(138, 20);
             this.FirstPaymentDate.TabIndex = 184;
             // 
             // SearchTextBox
@@ -756,9 +757,9 @@
             // 
             // ChargeOfExtraMileage
             // 
-            this.ChargeOfExtraMileage.Location = new System.Drawing.Point(1229, 211);
+            this.ChargeOfExtraMileage.Location = new System.Drawing.Point(1165, 213);
             this.ChargeOfExtraMileage.Name = "ChargeOfExtraMileage";
-            this.ChargeOfExtraMileage.Size = new System.Drawing.Size(59, 20);
+            this.ChargeOfExtraMileage.Size = new System.Drawing.Size(97, 20);
             this.ChargeOfExtraMileage.TabIndex = 203;
             // 
             // label34
@@ -767,13 +768,13 @@
             this.label34.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label34.Location = new System.Drawing.Point(1040, 212);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(183, 19);
+            this.label34.Size = new System.Drawing.Size(105, 19);
             this.label34.TabIndex = 202;
-            this.label34.Text = "Charge OF Extra Mileage";
+            this.label34.Text = "Perimum Rate";
             // 
             // MaximumKilometere
             // 
-            this.MaximumKilometere.Location = new System.Drawing.Point(1298, 158);
+            this.MaximumKilometere.Location = new System.Drawing.Point(1298, 141);
             this.MaximumKilometere.Name = "MaximumKilometere";
             this.MaximumKilometere.Size = new System.Drawing.Size(104, 20);
             this.MaximumKilometere.TabIndex = 201;
@@ -782,7 +783,7 @@
             // 
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(1268, 136);
+            this.label33.Location = new System.Drawing.Point(1267, 118);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(148, 19);
             this.label33.TabIndex = 200;
@@ -792,7 +793,7 @@
             // 
             this.NumberOfYears.Location = new System.Drawing.Point(1165, 178);
             this.NumberOfYears.Name = "NumberOfYears";
-            this.NumberOfYears.Size = new System.Drawing.Size(59, 20);
+            this.NumberOfYears.Size = new System.Drawing.Size(97, 20);
             this.NumberOfYears.TabIndex = 199;
             // 
             // label32

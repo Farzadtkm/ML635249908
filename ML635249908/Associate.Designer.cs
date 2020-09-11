@@ -70,7 +70,6 @@
             this.label24 = new System.Windows.Forms.Label();
             this.directoryEntry1 = new System.DirectoryServices.DirectoryEntry();
             this.AmountTextBox = new System.Windows.Forms.TextBox();
-            this.DateTextBox = new System.Windows.Forms.TextBox();
             this.LeaseIDTextBox = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
@@ -104,6 +103,7 @@
             this.ChargeOfExtraMileage = new System.Windows.Forms.TextBox();
             this.ReasonTextBox = new System.Windows.Forms.TextBox();
             this.label35 = new System.Windows.Forms.Label();
+            this.DateTextBox = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -238,7 +238,7 @@
             // 
             // LeaseOwner
             // 
-            this.LeaseOwner.Location = new System.Drawing.Point(1137, 142);
+            this.LeaseOwner.Location = new System.Drawing.Point(1157, 141);
             this.LeaseOwner.Name = "LeaseOwner";
             this.LeaseOwner.Size = new System.Drawing.Size(99, 20);
             this.LeaseOwner.TabIndex = 72;
@@ -476,13 +476,6 @@
             this.AmountTextBox.Size = new System.Drawing.Size(158, 20);
             this.AmountTextBox.TabIndex = 100;
             // 
-            // DateTextBox
-            // 
-            this.DateTextBox.Location = new System.Drawing.Point(105, 383);
-            this.DateTextBox.Name = "DateTextBox";
-            this.DateTextBox.Size = new System.Drawing.Size(158, 20);
-            this.DateTextBox.TabIndex = 99;
-            // 
             // LeaseIDTextBox
             // 
             this.LeaseIDTextBox.Location = new System.Drawing.Point(105, 357);
@@ -602,8 +595,9 @@
             // 
             this.OptionComboBox.FormattingEnabled = true;
             this.OptionComboBox.Items.AddRange(new object[] {
-            "Air Condition",
-            "Power Locks"});
+            "Air Condition & Power Locks",
+            "Power Locks",
+            "Air Condition"});
             this.OptionComboBox.Location = new System.Drawing.Point(392, 306);
             this.OptionComboBox.Name = "OptionComboBox";
             this.OptionComboBox.Size = new System.Drawing.Size(108, 21);
@@ -726,7 +720,7 @@
             this.BeginDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.BeginDate.Location = new System.Drawing.Point(223, 144);
             this.BeginDate.Name = "BeginDate";
-            this.BeginDate.Size = new System.Drawing.Size(126, 20);
+            this.BeginDate.Size = new System.Drawing.Size(133, 20);
             this.BeginDate.TabIndex = 184;
             // 
             // FirstPaymentDate
@@ -735,7 +729,7 @@
             this.FirstPaymentDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.FirstPaymentDate.Location = new System.Drawing.Point(223, 179);
             this.FirstPaymentDate.Name = "FirstPaymentDate";
-            this.FirstPaymentDate.Size = new System.Drawing.Size(126, 20);
+            this.FirstPaymentDate.Size = new System.Drawing.Size(133, 20);
             this.FirstPaymentDate.TabIndex = 185;
             // 
             // SearchTextBox
@@ -770,14 +764,14 @@
             // 
             this.NumberOfYears.Location = new System.Drawing.Point(1157, 179);
             this.NumberOfYears.Name = "NumberOfYears";
-            this.NumberOfYears.Size = new System.Drawing.Size(59, 20);
+            this.NumberOfYears.Size = new System.Drawing.Size(99, 20);
             this.NumberOfYears.TabIndex = 193;
             // 
             // label33
             // 
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(1256, 140);
+            this.label33.Location = new System.Drawing.Point(1262, 122);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(148, 19);
             this.label33.TabIndex = 194;
@@ -785,7 +779,7 @@
             // 
             // MaximumKilometere
             // 
-            this.MaximumKilometere.Location = new System.Drawing.Point(1290, 162);
+            this.MaximumKilometere.Location = new System.Drawing.Point(1290, 141);
             this.MaximumKilometere.Name = "MaximumKilometere";
             this.MaximumKilometere.Size = new System.Drawing.Size(104, 20);
             this.MaximumKilometere.TabIndex = 195;
@@ -794,17 +788,17 @@
             // 
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(1033, 204);
+            this.label34.Location = new System.Drawing.Point(1033, 212);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(183, 19);
+            this.label34.Size = new System.Drawing.Size(105, 19);
             this.label34.TabIndex = 196;
-            this.label34.Text = "Charge OF Extra Mileage";
+            this.label34.Text = "Perimum Rate";
             // 
             // ChargeOfExtraMileage
             // 
-            this.ChargeOfExtraMileage.Location = new System.Drawing.Point(1222, 205);
+            this.ChargeOfExtraMileage.Location = new System.Drawing.Point(1157, 212);
             this.ChargeOfExtraMileage.Name = "ChargeOfExtraMileage";
-            this.ChargeOfExtraMileage.Size = new System.Drawing.Size(59, 20);
+            this.ChargeOfExtraMileage.Size = new System.Drawing.Size(99, 20);
             this.ChargeOfExtraMileage.TabIndex = 197;
             // 
             // ReasonTextBox
@@ -824,11 +818,21 @@
             this.label35.TabIndex = 208;
             this.label35.Text = "Reason";
             // 
+            // DateTextBox
+            // 
+            this.DateTextBox.CustomFormat = "MMMM dd, yyyy";
+            this.DateTextBox.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DateTextBox.Location = new System.Drawing.Point(105, 383);
+            this.DateTextBox.Name = "DateTextBox";
+            this.DateTextBox.Size = new System.Drawing.Size(158, 20);
+            this.DateTextBox.TabIndex = 210;
+            // 
             // Associate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1406, 627);
+            this.Controls.Add(this.DateTextBox);
             this.Controls.Add(this.ReasonTextBox);
             this.Controls.Add(this.label35);
             this.Controls.Add(this.ChargeOfExtraMileage);
@@ -859,7 +863,6 @@
             this.Controls.Add(this.EditButton);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.AmountTextBox);
-            this.Controls.Add(this.DateTextBox);
             this.Controls.Add(this.LeaseIDTextBox);
             this.Controls.Add(this.label26);
             this.Controls.Add(this.label27);
@@ -956,7 +959,6 @@
         private System.Windows.Forms.Label label24;
         private System.DirectoryServices.DirectoryEntry directoryEntry1;
         private System.Windows.Forms.TextBox AmountTextBox;
-        private System.Windows.Forms.TextBox DateTextBox;
         private System.Windows.Forms.TextBox LeaseIDTextBox;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label27;
@@ -990,5 +992,6 @@
         private System.Windows.Forms.TextBox ChargeOfExtraMileage;
         private System.Windows.Forms.TextBox ReasonTextBox;
         private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.DateTimePicker DateTextBox;
     }
 }

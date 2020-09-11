@@ -29,13 +29,13 @@ namespace ML635249908
         //For Insert Key 
         private void button3_Click(object sender, EventArgs e)
         {
-        //To Enter Data to Payments
+            //To Enter Data to Payments
             if (ManagerComboBox.SelectedIndex == 2)
             {
                 connection.Open();
                 SqlCommand cmd = connection.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "INSERT INTO [Payments] (LeaseID, Date, Amount, Reason) VALUES ('" +LeaseIDTextBox.Text+ "','" + DateTextBox.Text + "', '" + AmountTextBox.Text + "','"+ReasonTextBox.Text+"')";
+                cmd.CommandText = "INSERT INTO [Payments] (LeaseID, Date, Amount, Reason) VALUES ('" + LeaseIDTextBox.Text + "','" + DateTextBox.Text + "', '" + AmountTextBox.Text + "','" + ReasonTextBox.Text + "')";
                 cmd.ExecuteNonQuery();
                 connection.Close();
                 LeaseIDTextBox.Text = "";
@@ -65,7 +65,7 @@ namespace ML635249908
             connection.Open();
             SqlCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "SELECT * FROM [Leases]";
+            cmd.CommandText = "SELECT Leases.*, Vehicles.KilometersOnOdometers FROM Leases INNER JOIN Vehicles ON WhichVehicleTheLeaseIsFor = VehicleVIN";
             cmd.ExecuteNonQuery();
             DataTable dta = new DataTable();
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
@@ -91,15 +91,15 @@ namespace ML635249908
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(ManagerComboBox.SelectedIndex == 0)
+            if (ManagerComboBox.SelectedIndex == 0)
             {
                 displayCustomersData();
             }
-            else if(ManagerComboBox.SelectedIndex == 1)
+            else if (ManagerComboBox.SelectedIndex == 1)
             {
                 displayLeasesData();
             }
-            else if(ManagerComboBox.SelectedIndex == 2)
+            else if (ManagerComboBox.SelectedIndex == 2)
             {
                 displayPaymentsData();
             }
@@ -126,7 +126,8 @@ namespace ML635249908
 
         private void EditButton_Click(object sender, EventArgs e)
         {
-            if (ManagerComboBox.SelectedIndex == 0) {
+            if (ManagerComboBox.SelectedIndex == 0)
+            {
                 try
                 {
                     connection.Open();
@@ -156,7 +157,7 @@ namespace ML635249908
                     connection.Open();
                     SqlCommand cmd = connection.CreateCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "UPDATE Leases set DateTheLeaseContractBegin='" + LeaseDate.Text + "',FirstPaymentDate='" + FirstPaymentDate.Text + "',AmountOfMonthlyPayment ='" + AmountOfMonthlyPayment.Text + "',NumberOfMonthlyPayments='" + NumberOfMonthlyPayments.Text + "',WhichVehicleTheLeaseIsFor='" + WhichVehicleLeaseFor.Text + "',LeaseOwner='" + LeaseOwner.Text + "', TheTermsOfTheLease=  '"+LeaseTerms.Text+ "',NumberOfYeasrs= '" + NumberOfYears.Text + "',MaximumKilometres='" + MaximumKilometere.Text + "', ChargeForExtraMileage='" + ChargeOfExtraMileage.Text + "' WHERE AmountOfMonthlyPayment='" + AmountOfMonthlyPayment.Text + "'";
+                    cmd.CommandText = "UPDATE Leases set DateTheLeaseContractBegin='" + LeaseDate.Text + "',FirstPaymentDate='" + FirstPaymentDate.Text + "',AmountOfMonthlyPayment ='" + AmountOfMonthlyPayment.Text + "',NumberOfMonthlyPayments='" + NumberOfMonthlyPayments.Text + "',WhichVehicleTheLeaseIsFor='" + WhichVehicleLeaseFor.Text + "',LeaseOwner='" + LeaseOwner.Text + "', TheTermsOfTheLease=  '" + LeaseTerms.Text + "',NumberOfYeasrs= '" + NumberOfYears.Text + "',MaximumKilometres='" + MaximumKilometere.Text + "', ChargeForExtraMileage='" + ChargeOfExtraMileage.Text + "' WHERE AmountOfMonthlyPayment='" + AmountOfMonthlyPayment.Text + "'";
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("The Data Updated Successfully");
                     connection.Close();
@@ -176,7 +177,7 @@ namespace ML635249908
                 {
 
                 }
-            } 
+            }
         }
 
         //Provine text box only get to characters for input and make the string Upper case.
@@ -233,7 +234,7 @@ namespace ML635249908
                         DeleteButton.Enabled = false;
                         VoidButton.Enabled = false;
                         InsertButton.Enabled = false;
-                        TerminateButton.Enabled = false;
+                        TerminateButton.Enabled = true;
                     }
                     else if (ManagerComboBox.SelectedIndex == 2)
                     {
@@ -246,7 +247,7 @@ namespace ML635249908
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(ManagerComboBox.SelectedIndex == 0)
+            if (ManagerComboBox.SelectedIndex == 0)
             {
                 NameTextBox.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
                 AddressTextBox.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
@@ -267,19 +268,22 @@ namespace ML635249908
                 NumberOfYears.Text = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
                 MaximumKilometere.Text = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString();
                 ChargeOfExtraMileage.Text = dataGridView1.Rows[e.RowIndex].Cells[9].Value.ToString();
+                //VehicleVinTxt.Text = dataGridView1.Rows[e.RowIndex].Cells[10].Value.ToString();
+                KilometereOnOdometertxt.Text = dataGridView1.Rows[e.RowIndex].Cells[10].Value.ToString();
             }
-            else if(ManagerComboBox.SelectedIndex == 2)
+            else if (ManagerComboBox.SelectedIndex == 2)
             {
                 LeaseIDTextBox.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
                 DateTextBox.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
                 AmountTextBox.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
                 ReasonTextBox.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
             }
+
         }
 
         private void SearchTextBox_TextChanged(object sender, EventArgs e)
         {
-          
+
         }
 
         /// <summary>
@@ -309,7 +313,7 @@ namespace ML635249908
                 PostalCodeTextBox.Text = "";
                 PhoneNumberTextBox.Text = "";
             }
-            else if(ManagerComboBox.SelectedIndex == 1)
+            else if (ManagerComboBox.SelectedIndex == 1)
             {
                 connection.Open();
                 SqlCommand cmd = connection.CreateCommand();
@@ -398,7 +402,12 @@ namespace ML635249908
         {
 
         }
-
+        /// <summary>
+        /// Amount text box check the Payment date with Contract date to see if the user pay his payments on time or not.
+        /// if the payment come after 3 days or more, the user will get a fine by 2 percent on its payment.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AmountTextBox_Leave(object sender, EventArgs e)
         {
             DateTime aDateBegin = new DateTime(LeaseDate.Value.Year, LeaseDate.Value.Month, LeaseDate.Value.Day);
@@ -425,34 +434,45 @@ namespace ML635249908
 
         private void TerminateButton_Click(object sender, EventArgs e)
         {
-            /*SqlCommand cmd = connection.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            string KilometerOnOdometere = cmd.CommandText = "SELECT KilometersOnOdometers FROM Vehicles";
-            cmd.ExecuteNonQuery();*/
+            MaximumKilometere.Text = MaximumKilometere.Text.Replace(",", "");
+            KilometereOnOdometertxt.Text = KilometereOnOdometertxt.Text.Replace(",", "");
 
+            double maxKilometer = double.Parse(MaximumKilometere.Text);
+            double kilometerOnOdometere = double.Parse(KilometereOnOdometertxt.Text);
+            double perimumRate = double.Parse(ChargeOfExtraMileage.Text);
+            double result;
 
+            if (kilometerOnOdometere > maxKilometer)
+            {
+                result = (kilometerOnOdometere - maxKilometer ) * perimumRate;
 
+                MessageBox.Show("Because You drove more than your Max kilometere you owe us " + result + " dollars");
+            }
+            else
+            {
+                // Update Row
+
+                MessageBox.Show("Your Lease Terminated, Thank You!!");
+            }
+        }
+
+        private void ShowButton_Click(object sender, EventArgs e)
+        {
             if (ManagerComboBox.SelectedIndex == 1)
             {
                 connection.Open();
                 SqlCommand cmd = connection.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "UPDATE Leases set DateTheLeaseContractBegin='" + LeaseDate.Text + "',FirstPaymentDate='" + FirstPaymentDate.Text + "',AmountOfMonthlyPayment ='" + AmountOfMonthlyPayment.Text + "',NumberOfMonthlyPayments='" + NumberOfMonthlyPayments.Text + "',WhichVehicleTheLeaseIsFor='" + WhichVehicleLeaseFor.Text + "',LeaseOwner='" + LeaseOwner.Text + "', TheTermsOfTheLease=  '" + "Terminated" + "',NumberOfYeasrs= '" + NumberOfYears.Text + "',MaximumKilometres='" + MaximumKilometere.Text + "', ChargeForExtraMileage='" + ChargeOfExtraMileage.Text + "' WHERE AmountOfMonthlyPayment='" + AmountOfMonthlyPayment.Text + "'";
+                cmd.CommandText = "SELECT VehicleVIN,KilometersOnOdometers FROM Vehicles WHERE VehicleVIN='" + VehicleVinTxt.Text + "'";
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("The Data Updated Successfully");
+                DataTable dt = new DataTable();
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                sda.Fill(dt);
+                dataGridView1.DataSource = dt;
                 connection.Close();
-                LeaseDate.Text = "";
-                FirstPaymentDate.Text = "";
-                AmountOfMonthlyPayment.Text = "";
-                NumberOfMonthlyPayments.Text = "";
-                WhichVehicleLeaseFor.Text = "";
-                LeaseOwner.Text = "";
-                LeaseTerms.Text = "";
-                NumberOfYears.Text = "";
-                MaximumKilometere.Text = "";
-                ChargeOfExtraMileage.Text = "";
-                displayLeasesData();
+                VehicleVinTxt.Text = "";
+                KilometereOnOdometertxt.Text = "";
             }
         }
     }
-    }
+}
