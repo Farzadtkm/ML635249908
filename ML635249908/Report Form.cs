@@ -24,7 +24,7 @@ namespace ML635249908
             connection.Open();
             SqlCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "SELECT Costumerss.First_LastName,Costumerss.PhoneNumber, Vehicles.VehicleVIN, Vehicles.Model FROM Leases INNER JOIN Vehicles ON WhichVehicleTheLeaseIsFor = VehicleVIN inner join Costumerss on First_LastName = LeaseOwner";
+            cmd.CommandText = "SELECT Leases.DateTheLeaseContractBegin, Leases.FirstPaymentDate, Costumerss.First_LastName,Costumerss.PhoneNumber, Vehicles.Model, Vehicles.VehicleVIN FROM Leases INNER JOIN Vehicles ON WhichVehicleTheLeaseIsFor = VehicleVIN inner join Costumerss on First_LastName = LeaseOwner";
             cmd.ExecuteNonQuery();
             DataTable dta = new DataTable();
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
@@ -36,10 +36,13 @@ namespace ML635249908
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            LeaseNameLable.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-            PhoneNumberLabale.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-            ModelLable.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-            VehicleVINLable.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+            dateTimePicker1.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+            dateTimePicker2.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            LeaseNameLable.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            PhoneNumberLabale.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+            ModelLable.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+            VehicleVINLable.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
+
         }
     }
 }

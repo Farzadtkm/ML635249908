@@ -39,6 +39,7 @@
             this.SearchButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,7 +80,7 @@
             // LeaseNameLable
             // 
             this.LeaseNameLable.AutoSize = true;
-            this.LeaseNameLable.Location = new System.Drawing.Point(291, 107);
+            this.LeaseNameLable.Location = new System.Drawing.Point(222, 106);
             this.LeaseNameLable.Name = "LeaseNameLable";
             this.LeaseNameLable.Size = new System.Drawing.Size(67, 13);
             this.LeaseNameLable.TabIndex = 4;
@@ -88,7 +89,7 @@
             // PhoneNumberLabale
             // 
             this.PhoneNumberLabale.AutoSize = true;
-            this.PhoneNumberLabale.Location = new System.Drawing.Point(141, 139);
+            this.PhoneNumberLabale.Location = new System.Drawing.Point(140, 139);
             this.PhoneNumberLabale.Name = "PhoneNumberLabale";
             this.PhoneNumberLabale.Size = new System.Drawing.Size(78, 13);
             this.PhoneNumberLabale.TabIndex = 5;
@@ -97,7 +98,7 @@
             // ModelLable
             // 
             this.ModelLable.AutoSize = true;
-            this.ModelLable.Location = new System.Drawing.Point(141, 177);
+            this.ModelLable.Location = new System.Drawing.Point(140, 177);
             this.ModelLable.Name = "ModelLable";
             this.ModelLable.Size = new System.Drawing.Size(36, 13);
             this.ModelLable.TabIndex = 6;
@@ -106,7 +107,7 @@
             // VehicleVINLable
             // 
             this.VehicleVINLable.AutoSize = true;
-            this.VehicleVINLable.Location = new System.Drawing.Point(291, 177);
+            this.VehicleVINLable.Location = new System.Drawing.Point(366, 177);
             this.VehicleVINLable.Name = "VehicleVINLable";
             this.VehicleVINLable.Size = new System.Drawing.Size(103, 13);
             this.VehicleVINLable.TabIndex = 7;
@@ -135,17 +136,28 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(144, 261);
+            this.dataGridView1.Location = new System.Drawing.Point(143, 261);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(716, 237);
+            this.dataGridView1.Size = new System.Drawing.Size(717, 237);
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(262, 173);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(96, 17);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Vehicle VIN: ";
             // 
             // Report_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1260, 558);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.SearchButton);
@@ -178,5 +190,6 @@
         private System.Windows.Forms.Button SearchButton;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label4;
     }
 }
