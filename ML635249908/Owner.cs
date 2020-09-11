@@ -635,5 +635,12 @@ namespace ML635249908
         {
 
         }
+
+        private void ReportButton_Click(object sender, EventArgs e)
+        {
+            Report_Form reportForm = new Report_Form();
+            reportForm.Show();
+            this.Hide();
+        }
     }
 }

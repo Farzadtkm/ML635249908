@@ -451,8 +451,16 @@ namespace ML635249908
             else
             {
                 // Update Row
-
+                connection.Open();
+                SqlCommand cmd = connection.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "UPDATE Leases SET TheTermsOfTheLease = '" +"TERMINATAED"+ "' WHERE NumberOfMonthlyPayments= '"+NumberOfMonthlyPayments.Text+"'";
+                cmd.ExecuteNonQuery();
                 MessageBox.Show("Your Lease Terminated, Thank You!!");
+                connection.Close();
+                LeaseTerms.Text = "";
+                NumberOfMonthlyPayments.Text = "";
+                displayLeasesData();
             }
         }
 

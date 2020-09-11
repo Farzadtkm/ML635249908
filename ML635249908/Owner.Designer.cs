@@ -105,6 +105,7 @@
             this.label35 = new System.Windows.Forms.Label();
             this.ReasonTextBox = new System.Windows.Forms.TextBox();
             this.DateTextBox = new System.Windows.Forms.DateTimePicker();
+            this.ReportButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -832,11 +833,25 @@
             this.DateTextBox.Size = new System.Drawing.Size(158, 20);
             this.DateTextBox.TabIndex = 206;
             // 
+            // ReportButton
+            // 
+            this.ReportButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ReportButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReportButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ReportButton.Location = new System.Drawing.Point(1207, 256);
+            this.ReportButton.Name = "ReportButton";
+            this.ReportButton.Size = new System.Drawing.Size(180, 58);
+            this.ReportButton.TabIndex = 207;
+            this.ReportButton.Text = "REPORT";
+            this.ReportButton.UseVisualStyleBackColor = false;
+            this.ReportButton.Click += new System.EventHandler(this.ReportButton_Click);
+            // 
             // Owner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1414, 615);
+            this.Controls.Add(this.ReportButton);
             this.Controls.Add(this.DateTextBox);
             this.Controls.Add(this.ReasonTextBox);
             this.Controls.Add(this.label35);
@@ -998,5 +1013,6 @@
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.TextBox ReasonTextBox;
         private System.Windows.Forms.DateTimePicker DateTextBox;
+        private System.Windows.Forms.Button ReportButton;
     }
 }
